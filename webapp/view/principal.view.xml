@@ -1,0 +1,141 @@
+<mvc:View controllerName="AR_DP_VEH_CIRCULARES.AR_DP_VEH_CIRCULARES.controller.principal" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Panel>
+							<IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+								<items>
+									<IconTabFilter icon="sap-icon://post">
+										<Table id="table" mode="None" items="{DocModel>/origList/}" width="auto" noDataText="{worklistView>/tableNoDataText}"
+											busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" alternateRowColors="true"
+											itemPress="onPressTable">
+											<headerToolbar>
+												<OverflowToolbar>
+													<ObjectIdentifier id="Circulares" title="Circulares"/>
+													<ToolbarSpacer/>
+													<Button text="Agregar" icon="sap-icon://add" type="Transparent" press="onDialogBuilder" id="btnagregarcircular"/>
+													<!--<Button type="Transparent" text=" Enviar" icon="sap-icon://email" press="EnvioCorreo"/>-->
+													<!--<Button type="Transparent" text=" Descargar" icon="sap-icon://excel-attachment" press="downloadExcel"/>-->
+													<!--<Button type="Transparent" icon="sap-icon://action-settings" press="actualizar"/>-->
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column id="id" hAlign="Center">
+													<Text text="ID"/>
+												</Column>
+												<Column id="titulo" hAlign="Center">
+													<Text text="Titulo"/>
+												</Column>
+												<Column id="nom" hAlign="Center">
+													<Text text="Archivo"/>
+												</Column>
+												<Column id="usr" hAlign="Center">
+													<Text text="Usuario"/>
+												</Column>
+												<Column id="fech" hAlign="Center">
+													<Text text="Creación"/>
+												</Column>
+												<Column id="operFile" hAlign="Center">
+													<Text text="Adjunto"/>
+												</Column>
+												<Column id="delete" hAlign="Center">
+													<Text text=""/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<ObjectIdentifier text="{DocModel>ID_DOCUMENTO}"/>
+														<ObjectIdentifier text="{DocModel>TITULO}"/>
+														<ObjectIdentifier text="{DocModel>NOMBRE_ARCHIVO}"/>
+														<ObjectIdentifier text="{DocModel>ID_USUARIO}"/>
+														<ObjectIdentifier text="{path: 'DocModel>FECHA_HORA_CREACION', formatter: '.formatDate'}"/>
+														<Button icon="sap-icon://attachment" press="openFile"/>
+														<Button icon="sap-icon://delete" enabled="true" type="Reject" press="fndetele" id="btneliminar"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</IconTabFilter>
+									<IconTabFilter icon="sap-icon://download">
+										<Table id="table2" mode="None" items="{DocModel2>/origList/}" width="auto" noDataText="{worklistView>/tableNoDataText}"
+											busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" alternateRowColors="true"
+											itemPress="onPressTable">
+											<headerToolbar>
+												<OverflowToolbar>
+													<ObjectIdentifier id="Descargables" title="Descargables"/>
+													<ToolbarSpacer/>
+													<Button text="Agregar" icon="sap-icon://add" type="Transparent" press="onDialogBuilder2" id="btnagregardescargable2"/>
+													<!--<Button type="Transparent" text=" Enviar" icon="sap-icon://email" press="EnvioCorreo"/>-->
+													<!--<Button type="Transparent" text=" Descargar" icon="sap-icon://excel-attachment" press="downloadExcel"/>-->
+													<!--<Button type="Transparent" icon="sap-icon://action-settings" press="actualizar"/>-->
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column id="id2" hAlign="Center">
+													<Text text="ID"/>
+												</Column>
+												<Column id="titulo2" hAlign="Center">
+													<Text text="Titulo"/>
+												</Column>
+												<Column id="nom2" hAlign="Center">
+													<Text text="Archivo"/>
+												</Column>
+												<Column id="usr2" hAlign="Center">
+													<Text text="Usuario"/>
+												</Column>
+												<Column id="fech2" hAlign="Center">
+													<Text text="Creación"/>
+												</Column>
+												<Column id="operFile2" hAlign="Center">
+													<Text text="Adjunto"/>
+												</Column>
+												<Column id="delete2" hAlign="Center">
+													<Text text=""/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<ObjectIdentifier text="{DocModel2>ID_DOCUMENTO}"/>
+														<ObjectIdentifier text="{DocModel2>TITULO}"/>
+														<ObjectIdentifier text="{DocModel2>NOMBRE_ARCHIVO}"/>
+														<ObjectIdentifier text="{DocModel2>ID_USUARIO}"/>
+														<ObjectIdentifier text="{path: 'DocModel2>FECHA_HORA_CREACION', formatter: '.formatDate'}"/>
+														<Button icon="sap-icon://attachment" press="openFile"/>
+														<Button icon="sap-icon://delete" enabled="true" type="Reject" press="fndetele2" id="btneliminar2"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</IconTabFilter>
+								</items>
+							</IconTabBar>
+						</Panel>
+					</content>
+					<customHeader>
+						<Bar class="sapContrastPlus" design="Header" visible="false">
+							<contentLeft>
+								<VBox width="15px"/>
+								<Text text="Reporte Pedidos" class="tituloHead"/>
+								<!--Image height="28px" id="lNissan"/-->
+							</contentLeft>
+						</Bar>
+					</customHeader>
+					<footer >
+						<Bar class="sapContrast sapContrastPlus">
+							<contentRight>
+								<!--<Button text="Eliminar" icon="sap-icon://delete" enabled="true" type="Reject" press="onEliminar2" id="btneliminar2"/>-->
+								<!--<Button id="Agregar" text="Crear Carpeta" type="Accept" press="createfolder" icon="sap-icon://add" class="sapUiSmallMarginEnd"/>-->
+								<Button id="atras" text="Salir" type="Reject" press="onSalir" icon="sap-icon://log" class="sapUiSmallMarginEnd"/>
+							</contentRight>
+						</Bar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

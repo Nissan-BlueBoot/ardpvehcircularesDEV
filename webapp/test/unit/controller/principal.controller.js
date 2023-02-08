@@ -1,0 +1,1 @@
+sap.ui.define(["AR_DP_VEH_CIRCULARES/AR_DP_VEH_CIRCULARES/controller/principal.controller"],function(n){"use strict";QUnit.module("principal Controller");QUnit.test("I should test the principal controller",function(t){var i=new n;i.onInit();t.ok(i)})});

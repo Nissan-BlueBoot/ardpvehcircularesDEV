@@ -1,0 +1,73 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/AR_DP_VEH_DEST_HANA",
+      "target": {
+        "type": "destination",
+        "name": "AR_DP_VEH_DEST_HANA"
+      },
+      "description": "AR_DP_VEH_DEST_HANA"
+    },
+    {
+      "path": "/DSNissan_Repositorio",
+      "target": {
+        "type": "destination",
+        "name": "DSNissan_Repositorio"
+      },
+      "description": "DSNissan_Repositorio"
+    },
+    {
+      "path": "/services/userapi",
+      "target": {
+        "type": "service",
+        "name": "userapi"
+      }
+    },
+    {
+      "path": "/destinations/IDP_Nissan",
+      "target": {
+        "type": "destination",
+        "name": "IDP_Nissan"
+      },
+      "description": "IDP_Nissan"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}
